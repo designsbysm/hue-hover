@@ -1,4 +1,5 @@
 import React, { ReactNode, useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 
 import './Cell.scss';
 
@@ -8,13 +9,24 @@ const App = ({ children, color }: Props) => {
     setHover,
   ] = useState(false);
 
-  return <div
-    className={hover ? 'cell current' : 'cell'}
+  const styles = useSpring({
+    backgroundColor: color,
+    borderRadius: '10vh',
+    config: {
+      friction: 5,
+      mass: 5,
+      tension: 1000,
+    },
+    opacity: hover ? 1 : 0,
+  });
+
+  return <animated.div
+    className='cell'
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}
-    style={{ backgroundColor: color }}>
+    style={styles}>
     {children}
-  </div >;
+  </animated.div >;
 };
 
 type Props = {
