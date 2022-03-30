@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.scss';
-import Grid from './screens/Grid';
+import Color from './screens/Color';
+// import Grid from './screens/Grid';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Grid />
+    <Color />
+    {/* <Grid /> */}
   </React.StrictMode>,
   document.getElementById('root'),
 );
