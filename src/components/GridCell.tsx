@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 
-import './Cell.scss';
+import './GridCell.scss';
 
 const App = ({ children, color }: Props) => {
   const [
