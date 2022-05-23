@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install -g http-server
+RUN npm install -g serve
 RUN npm install
 
 COPY . .
 RUN npm run build
 
-CMD http-server build
+CMD serve --single build
